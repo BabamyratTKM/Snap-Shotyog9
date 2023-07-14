@@ -1,23 +1,32 @@
-import Snap_Shop from "./components/Snap_Shot";
 import "./App.css";
 
-import { useEffect, useRef} from 'react';
+import { StrictMode } from "react";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+
+import Snapshot from "./components/Snapshot";
+import Mountain from "./pages/mountain";
+import Beaches from "./pages/beaches";
+import Birds from "./pages/birds";
+import Food from "./pages/food";
+
 function App() {
-  const ref = useRef (null);
-  useEffect(() => {
-    const element =ref.current;
-    
-    // console.log(element.id);
-    setTimeout(() => {
-     element.style.display="none"
-    },800)
-  }, [])
-   
   return (
-    <div className="App">
-      <Snap_Shop></Snap_Shop>
-   <div className="loader" ref={ref} id="loader"></div>
-    </div>
+    <StrictMode>
+      <BrowserRouter>
+        <div className="App">
+          <div className="container">
+            <Snapshot />
+            <Routes>
+              <Route path="/" element={<Mountain />} />
+              <Route path="/beaches" element={<Beaches />} />
+              <Route path="/birds" element={<Birds />} />
+              <Route path="/food" element={<Food />} />
+            </Routes>
+          </div>
+        </div>
+      </BrowserRouter>
+    </StrictMode>
   );
 }
 export default App;
+
