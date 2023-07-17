@@ -252,12 +252,18 @@ input {
   }
 
 }
+@media only screen and (max-width:833px) {
+  .nav ul {
+    display: grid;
+    grid-template-columns: auto;
+  }
+}
 
 .loader {
   border: 16px solid #f3f3f3;
-  /* Light grey */
+
   border-top: 16px solid #051c33;
-  /* Blue */
+
   border-radius: 50%;
   width: 120px;
   height: 120px;
