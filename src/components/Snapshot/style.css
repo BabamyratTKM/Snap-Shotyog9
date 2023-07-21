@@ -1,0 +1,50 @@
+.search {
+  font-size: 1em;
+  width: 100%;
+  background-color: #edeff0;
+  padding: 10px 15px;
+  border: 3px solid #d7dbdf;
+  border-right: none;
+  border-radius: 0.35em 0 0 0.35em;
+  outline: none;
+}
+.div {
+  max-width: 460px;
+  display: flex;
+  margin: 0 auto 32px;
+}
+h1 {
+  font-family: "Lobster", "Josefin Sans", Helvetica, Arial, sans-serif;
+  font-size: 4em;
+  color: #051c33;
+}
+.div button {
+  outline: none;
+  border: none;
+  padding: 0px 15px;
+  border-radius: 0 0.35em 0.35em 0;
+  cursor: pointer;
+}
+
+.nav {
+  display: flex;
+  height: 46px;
+  align-items: center;
+  justify-content: center;
+}
+.nav ul {
+  display: flex;
+  justify-items: center;
+  gap: 20px;
+}
+.nav li {
+  width: 100px;
+}
+
+.nav a {
+  padding: 5px;
+  display: grid;
+  background: #051c33;
+  border-radius: 3px;
+  color: #fff;
+}

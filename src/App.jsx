@@ -1,13 +1,8 @@
 import "./App.css";
-
 import { StrictMode } from "react";
-import { BrowserRouter, Route, Routes } from "react-router-dom";
-
+import { BrowserRouter } from "react-router-dom";
 import Snapshot from "./components/Snapshot";
-import Mountain from "./pages/mountain";
-import Beaches from "./pages/beaches";
-import Birds from "./pages/birds";
-import Food from "./pages/food";
+import Main from "./pages/main.jsx";
 
 function App() {
   return (
@@ -16,17 +11,14 @@ function App() {
         <div className="App">
           <div className="container">
             <Snapshot />
-            <Routes>
-              <Route path="/" element={<Mountain />} />
-              <Route path="/beaches" element={<Beaches />} />
-              <Route path="/birds" element={<Birds />} />
-              <Route path="/food" element={<Food />} />
-            </Routes>
+            <Main />
           </div>
+          <span className="fork">
+            <a href="https://github.com/">Fork me on GitHub</a>
+          </span>
         </div>
       </BrowserRouter>
     </StrictMode>
   );
 }
 export default App;
-

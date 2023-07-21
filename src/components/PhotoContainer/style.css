@@ -1,0 +1,22 @@
+.photo ul {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  justify-content: space-between;
+  -ms-align-items: flex-start;
+  align-items: flex-start;
+}
+.photo ul li {
+  width: 220px;
+  height: 165px;
+  overflow: hidden;
+  margin-bottom: 15px;
+}
+.photo ul img {
+  height: 100%;
+  width: 220px;
+  transform: scale(1.25);
+  transition: transform 1.25s;
+}
+.photo li:hover img {
+  transform: scale(1.65);
+}
