@@ -1,27 +1,39 @@
 /* eslint-disable react/jsx-key */
 
-// import { Link } from "react-router-dom";
-import { useState } from "react";
 const navigationBlocks = ["Mountain", "Beaches", "Birds", "Food"];
-
+import SearchPhoto from "../../pages/searchPhoto/searchPhoto";
+import { useState } from "react";
 import "./style.css";
+import { useNavigate } from "react-router-dom";
 
 function Snapshot() {
-  const [name, setName] = useState("");
+  const [value, setValue] = useState("");
+  let navigate = useNavigate();
+  const onChange = (event) => {
+    setValue(event.target.value);
+  };
+  const onSearch = (searchTerm) => {
+    console.log(searchTerm);
+    navigate("/search");
+    return <SearchPhoto name={value} />;
+  };
+
   return (
     <div>
       <h1>SnapShot</h1>
-      <div className="div">
+      <div className="searchForm">
         <input
           className="search"
-          onChange={(e) => setName(e.target.value)}
+          onChange={onChange}
+          value={value}
           placeholder="Search..."
         />
-        <button
+        <a
+          onClick={() => onSearch(value)}
           type="submit"
           className="Search"
           style={{
-            backgroundColor: name.length > 0 ? "#051c33" : "#fcfcfc",
+            backgroundColor: value.length > 0 ? "#051c33" : "#fcfcfc",
           }}
           id="Search"
         >
@@ -31,7 +43,7 @@ function Snapshot() {
               fill="#ffffff"
             ></path>
           </svg>
-        </button>
+        </a>
       </div>
       <nav className="nav">
         <ul>

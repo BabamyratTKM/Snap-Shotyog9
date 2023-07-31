@@ -1,24 +1,26 @@
 import "./App.css";
 import { StrictMode } from "react";
 import { BrowserRouter } from "react-router-dom";
-import Snapshot from "./components/Snapshot";
-import Main from "./pages/main.jsx";
 
-function App() {
-  return (
-    <StrictMode>
-      <BrowserRouter>
-        <div className="App">
-          <div className="container">
-            <Snapshot />
-            <Main />
+import Routes from "./pages/routes.jsx";
+import { Component } from "react";
+class App extends Component {
+  render() {
+    return (
+      <StrictMode>
+        <BrowserRouter>
+          <div className="App">
+            <div className="container">
+              
+              <Routes />
+            </div>
+            <span className="fork">
+              <a href="https://github.com/">Fork me on GitHub</a>
+            </span>
           </div>
-          <span className="fork">
-            <a href="https://github.com/">Fork me on GitHub</a>
-          </span>
-        </div>
-      </BrowserRouter>
-    </StrictMode>
-  );
+        </BrowserRouter>
+      </StrictMode>
+    );
+  }
 }
 export default App;
